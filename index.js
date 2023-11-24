@@ -37,6 +37,12 @@ app.get('/api/episodes/:id/comments', async (req, res) => {
     res.json(joined);
 });
 
+app.get('/api/episodes/:id', async (req, res) => {
+    const episode = await knex("episodes")
+    .where({"id": req.params.id})
+    res.json(episode);
+});
+
 app.get("/", function(req, res){
     res.send("Hi there, welcome to my app");
 })
