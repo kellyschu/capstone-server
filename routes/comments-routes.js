@@ -9,6 +9,5 @@ router
 router
     .route("/:id/comments")
     .get(commentsController.find)
-    .post(commentsController.add);
 
 module.exports = router;

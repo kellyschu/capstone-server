@@ -12,7 +12,9 @@ router
 
 router
     .route('/:id/comments')
-    .get(episodeController.comments);
+    .get(episodeController.comments)
+    .post(episodeController.addComment);
+
     
 
 module.exports = router;
