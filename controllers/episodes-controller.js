@@ -26,10 +26,13 @@ const find = async (req, res) => {
 const comments = async (req, res) => {
     try {
         const { id } = req.params;
-        const data = await knex('comments').where({ episode_id: id });
-        if (data.length === 0) {
-            return res.status(404).json({ error: "No comments found" });
-        } else {
+        
+        const data = await knex('comments')
+            .join('users', 'comments.user_id', 'users.id')
+            .select('users.first_name', 'users.last_name', 'comments.content', 'comments.timestamp') // Add 'comments.timestamp' to the select statement
+            .where({ episode_id: id });
+        
+        if (data) {
             res.status(200).json(data);
         }
     } catch (error) {
