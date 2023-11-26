@@ -1,22 +1,18 @@
-// const express = require('express');
-// const router = express.Router();
-// const episodeController = require ('../controllers/episodes-controller')
+const express = require('express');
+const router = express.Router();
+const episodeController = require ('../controllers/episodes-controller')
 
+router
+    .route('/')
+    .get(episodeController.index);
 
-// // ******GET/POST API FOR ALL episodes******
-// router
-//     .route('/')
-//     .get(episodeController.index)
-//     .post(episodeController.add)
+router
+    .route('/:id')
+    .get(episodeController.find);
 
-// // ******GET/PUT/DELETE API FOR A SINGLE episode card******
-// router
-//     .route('/:id')
-//     .get(episodeController.find)
-//     .delete(episodeController.remove)
-//     .put(episodeController.update)
+router
+    .route('/:id/comments')
+    .get(episodeController.comments);
     
-
-
 
 module.exports = router;

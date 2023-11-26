@@ -1,16 +1,14 @@
-// const express = require('express');
-// const router = express.Router();
-// const userController = require("../controllers/users-controller");
+const express = require('express');
+const router = express.Router();
+const commentsController = require("../controllers/comments-controller");
 
-// router
-//     .route("/")
-//     .get(userController.index)
-//     .post(userController.add)
+router
+    .route("/")
+    .get(commentsController.index)
 
-// router
-//     .route("/:id/:episode_id")
-//     .get(userController.search)
-//     .put(userController.edit)
-//     .delete(userController.remove);
+router
+    .route("/:id/comments")
+    .get(commentsController.find)
+    .post(commentsController.add);
 
-// module.exports = router;
+module.exports = router;
