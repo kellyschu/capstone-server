@@ -9,34 +9,7 @@ const index = async (_req, res) => {
     }
 }
 
-    const add = async (req, res) => {
-        try {
-        const { episode_id, user_id, timestamp, content } = req.body;
-        if (!episode_id || !user_id || !timestamp || !content) {
-            return res.status(400).json({ error: "please fill in all required fields" });
-        }
-    
-        const episode = await knex('epsiodes').where({ id: episode_id }).first();
-        if (!episode) {
-            return res.status(400).json({ error: "Episode ID does not exist" });
-        }
-        const user = await knex('users').where({ id: user_id }).first();
-        if (!user) {
-            return res.status(400).json({ error: "User ID does not exist" });
-        }
-        const result = await knex('comments').insert(req.body);
-    
-        const newCommentId = result[0];
-        const createdComment = await knex('comments').where({ id: newCommentId });
-        res.status(201).json(createdComment);
-        } catch (error) {
-        res.status(500).json({
-            message: `Can't add new comment: ${error}`
-        })
-        }
-    }
-
-    const find = async (req, res) => {
+const find = async (req, res) => {
     try {
         const joined = await knex('comments')
         .join("episodes", "episodes.id", "comments.episode_id")
@@ -50,10 +23,9 @@ const index = async (_req, res) => {
     } catch (error) {
         res.status(400).send(`Error retrieving comments: ${error}`);
     }
-    };
+};
 
     module.exports = {
         find,
-        add,
         index
     }

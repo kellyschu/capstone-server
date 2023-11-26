@@ -3,7 +3,6 @@
  * @returns { Promise<void> }
  */
 exports.seed = async function (knex) {
-    // Deletes ALL existing entries
     await knex('episodes').del();
     await knex('episodes').insert([
         {
@@ -343,7 +342,6 @@ exports.seed = async function (knex) {
             channel: "Conan O'Brien Needs A Friend",
             category: 8
         }
-
 
     ]);
 };
