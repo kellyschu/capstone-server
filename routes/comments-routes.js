@@ -6,8 +6,4 @@ router
     .route("/")
     .get(commentsController.index)
 
-router
-    .route("/:id/comments")
-    .get(commentsController.find)
-
 module.exports = router;

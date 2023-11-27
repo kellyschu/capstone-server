@@ -11,8 +11,8 @@ exports.seed = async function (knex) {
             description: "Tetris is one of the most popular video games of all time, and Henk Rogers helped make it happen. He first discovered the game at a convention in 1988, and immediately saw how elegant and addictive it was. As a software developer based in Japan, Henk set out to obtain selected publishing rights, but waded into a tangle of red tape that stretched from Japan to the U.S. to the Soviet Union. He eventually ventured behind the Iron Curtain to bluster his way into the obscure government office that managed Tetris. While in Moscow, Henk also met the game’s inventor, Alexey Pajitnov, and the two of them hit it off. After much legal wrangling across many time zones, Henk and Alexey won the worldwide rights to the game; and today, Tetris has sold over 500 million copies.",
             channel: "How I Built This with Guy Raz",
             category: 1,
-            likes: 0, 
-            saves: 0 
+            likes: 12678, 
+            saves: 1812 
         },
         {
             id: "4Gqw5HFlq8Y7zNK6wqA5lK",
@@ -20,8 +20,8 @@ exports.seed = async function (knex) {
             description: "In 2005, the trajectory of Holly Thaggard's life completely changed when a good friend of hers was diagnosed with skin cancer. Holly realized that most people weren't taking sunscreen seriously, so she sidelined her vocation as a harpist to dive headfirst into the unfamiliar world of SPF. After a false start trying to market her sunscreen to elementary schools, Holly pivoted to retail, hiring a publicist she could barely afford. She eventually got her products into Sephora, a success that helped turn Supergoop! into a multi-million dollar brand.",
             channel: "How I Built This with Guy Raz",
             category: 1,
-            likes: 0, 
-            saves: 0 
+            likes: 126, 
+            saves: 12 
         },
         {
             id: "1vg2pChLepN1TCzsCBglNQ",
