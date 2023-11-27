@@ -19,14 +19,27 @@ exports.up = function(knex) {
             table.longtext('description');
             table.string('channel');
             table.integer('category');
+            table.integer('likes');
+            table.integer('saves');
         })
     .createTable('comments', (table) => {
         table.string('id', 36).primary();
+        table
+            .string('episode_id', 36)
+            .references('id')
+            .inTable('episodes')
+            .onUpdate('CASCADE')
+            .onDelete('CASCADE');
+        table
+            .string('user_id', 36)
+            .references('id')
+            .inTable('users')
+            .onUpdate('CASCADE')
+            .onDelete('CASCADE');
         table.timestamp('timestamp');
         table.string('content');
-        table.string('user_id').references('users.id');
-        table.string('episode_id').references('episodes.id');
     })
+    
     };
     
 /**
