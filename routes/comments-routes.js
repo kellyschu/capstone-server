@@ -6,4 +6,10 @@ router
     .route("/")
     .get(commentsController.index)
 
+router
+    .route("/episodes")
+    .get(commentsController.allComments)
+
+
+
 module.exports = router;

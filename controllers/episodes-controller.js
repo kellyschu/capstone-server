@@ -84,7 +84,10 @@ const { v4: uuidv4 } = require('uuid');
 
 const addComment = async (req, res) => {
     const { id: episodeId } = req.params;
-    const { user_id, timestamp, content } = req.body;
+    const { user_id, content } = req.body;
+    if (!user_id || !content) {
+        return res.status(400).json({ error: "user_id or content is undefined" });
+    }
     try {
         const episode = await knex('episodes')
         .where({ id: episodeId }).first(); 
@@ -93,12 +96,14 @@ const addComment = async (req, res) => {
         }
 
         const commentId = uuidv4();
+        const timestamp = new Date();
+
         await knex('comments').insert({
             id: commentId,
             episode_id: episodeId,
-            user_id: user_id,
+            user_id,
             timestamp: timestamp,
-            content: content,
+            content,
         });
         res.status(201).json({ success: true });
 
