@@ -4,11 +4,15 @@ const cors = require('cors');
 const commentRoutes = require('./routes/comments-routes'); 
 const episodeRoutes = require('./routes/episodes-routes');
 const userRoutes = require('./routes/users-routes'); 
-const knex = require('knex')(require('./knexfile.js'));
-
-
 const app = express();
+const bodyParser = require('body-parser');
+
+
 const PORT = process.env.PORT || 8004;
+
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(cors())
 app.use(express.json());
