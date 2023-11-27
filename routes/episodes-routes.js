@@ -11,10 +11,11 @@ router
     .get(episodeController.find);
 
 router
-    .route('/:id/comments')
-    .get(episodeController.comments)
-    .post(episodeController.addComment);
+    .route('/:id/data')
+    .get(episodeController.data)
+    .post(episodeController.addComment)
+    // .patch(episodeController.updateData)
+    // .delete(episodeController.deleteComment);
 
-    
 
 module.exports = router;

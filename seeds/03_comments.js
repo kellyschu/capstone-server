@@ -164,7 +164,7 @@ exports.seed = async function (knex) {
         {
             id: "f6714694-1206-4f78-aac7-53e4e1e7dbfe",
             episode_id: "54BbccglItzSKlxDf3ed6A",
-            user_id: "d6fe0564-2db5-4c98-a3c7-95068a76e1f3",
+            user_id: "b4b3d3bd-156c-4cf3-a6e0-929d9a71b1e2",
             timestamp: "2023-11-22 18:45:00",
             content: "Patricia Newsom's story is so heartbreaking. It's a reminder that justice should never be forgotten, no matter how much time has passed."
         },
@@ -185,7 +185,7 @@ exports.seed = async function (knex) {
         {
             id: "92a63088-2f6f-4e4e-83e3-dc3f8a7b8d78",
             episode_id: "1RJB8ZpC1ggFHoyGl1m4IH",
-            user_id: "d6fe0564-2db5-4c98-a3c7-95068a76e1f3",
+            user_id: "4b71b461-e32f-4b63-a5f1-570bae9254a5",
             timestamp: "2023-11-22 22:45:00",
             content: "The Italian Deli vs Jewish Deli battle is hilarious! Sal Vulcano and Joe DeRosa always bring the laughs."
         },
@@ -201,7 +201,7 @@ exports.seed = async function (knex) {
             episode_id: "2DO5xvoqcbBYkUMeqv27fF",
             user_id: "d02e95b7-d4a3-4c15-9df3-5cc8c2ecf5af",
             timestamp: "2023-11-23 01:30:00",
-            content: "The battle between Eggs Benedict and Pancakes is making me hungry! I love the diverse topics on Sal Vulcano and Joe DeRosa's Taste B
+            content: "The battle between Eggs Benedict and Pancakes is making me hungry! I love the diverse topics on Sal Vulcano and Joe DeRosa's Taste Buds!"
         },
         {
             id: "d3e4a862-3904-4e3b-bb84-578e7761a345",

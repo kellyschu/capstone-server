@@ -22,25 +22,16 @@ exports.up = function(knex) {
             table.integer('likes');
             table.integer('saves');
         })
-    .createTable('comments', (table) => {
-        table.string('id', 36).primary();
-        table
-            .string('episode_id', 36)
-            .references('id')
-            .inTable('episodes')
-            .onUpdate('CASCADE')
-            .onDelete('CASCADE');
-        table
-            .string('user_id', 36)
-            .references('id')
-            .inTable('users')
-            .onUpdate('CASCADE')
-            .onDelete('CASCADE');
-        table.timestamp('timestamp');
-        table.string('content');
-    })
-    
-    };
+
+        .createTable('comments', (table) => {
+            table.string('id', 36).primary();
+            table.string('episode_id').references('episodes.id');
+            table.string('user_id', 36).references('users.id');
+            table.timestamp('timestamp');
+            table.string('content');
+        })
+        };
+
     
 /**
  * @param { import("knex").Knex } knex

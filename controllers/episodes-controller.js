@@ -23,20 +23,27 @@ const find = async (req, res) => {
     }
 };
 
-const comments = async (req, res) => {
+const data = async (req, res) => {
     try {
         const { id } = req.params;
-        
-        const data = await knex('comments')
+        const info = await knex('comments')
             .join('users', 'comments.user_id', 'users.id')
-            .select('users.first_name', 'users.last_name', 'comments.content', 'comments.timestamp')
-            .where({ episode_id: id });
-        
-        if (data) {
-            res.status(200).json(data);
-        }
+            .join('episodes', 'comments.episode_id', 'episodes.id')
+            .select(
+                'users.first_name',
+                'users.last_name',
+                'comments.content',
+                'comments.timestamp',
+                'episodes.id as episode_id',
+                'episodes.likes',
+                'episodes.saves'
+            )
+            .where({ 'comments.episode_id': id });
+
+        res.status(200).json(info);
     } catch (error) {
-        res.status(400).send(`Error retrieving comments: ${error}`);
+        console.error(error);
+        res.status(500).json({ error: 'Internal Server Error' });
     }
 };
 
@@ -71,6 +78,6 @@ const addComment = async (req, res) => {
 module.exports = {
     index,
     find,
-    comments,
+    data,
     addComment
 };
