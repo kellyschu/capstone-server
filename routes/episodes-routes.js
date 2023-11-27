@@ -7,15 +7,20 @@ router
     .get(episodeController.index);
 
 router
-    .route('/:id')
-    .get(episodeController.find);
+    .route('/category/:id')
+    .get(episodeController.category);
 
 router
-    .route('/:id/data')
-    .get(episodeController.data)
+    .route('/:id')
+    .get(episodeController.find)
+    .patch(episodeController.updateEpisode);
+
+router
+    .route('/:id/comments')
+    .get(episodeController.comments)
     .post(episodeController.addComment)
-    // .patch(episodeController.updateData)
     // .delete(episodeController.deleteComment);
+
 
 
 module.exports = router;

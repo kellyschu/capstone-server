@@ -20,8 +20,8 @@ exports.seed = async function (knex) {
             description: "In 2005, the trajectory of Holly Thaggard's life completely changed when a good friend of hers was diagnosed with skin cancer. Holly realized that most people weren't taking sunscreen seriously, so she sidelined her vocation as a harpist to dive headfirst into the unfamiliar world of SPF. After a false start trying to market her sunscreen to elementary schools, Holly pivoted to retail, hiring a publicist she could barely afford. She eventually got her products into Sephora, a success that helped turn Supergoop! into a multi-million dollar brand.",
             channel: "How I Built This with Guy Raz",
             category: 1,
-            likes: 0, 
-            saves: 0 
+            likes: 126, 
+            saves: 12 
         },
         {
             id: "1vg2pChLepN1TCzsCBglNQ",
