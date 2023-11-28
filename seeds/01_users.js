@@ -29,7 +29,7 @@ exports.seed = async function (knex) {
         },
         {
             id: "4b71b461-e32f-4b63-a5f1-570bae9254a5",
-            first_name: 'Sanda',
+            first_name: 'Sandra',
             last_name: 'Peterson',
             email: 'speterson@streaming.com',
             password: 'alpha098',

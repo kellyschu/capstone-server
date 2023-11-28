@@ -14,7 +14,7 @@ const allComments = async (req, res) => {
     try {
         const joined = await knex('comments')
             .join('episodes', 'episodes.id', 'comments.episode_id')
-            .select('episodes.id', 'episodes.title', 'comments.content')
+            .select('episodes.id', 'episodes.title', 'episodes.channel','comments.content')
         if (joined) {
             res.status(200).json(joined);
         } else {
